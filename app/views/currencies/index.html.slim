@@ -1,0 +1,7 @@
+
+div.container.col-4
+  div.column
+    h3.label.label-secondary.columns.text-center Currency
+    div.columns 
+      span.column.label.col-mr-auto = "#{@currency.currency_from}/#{@currency.currency_to}"  
+      span.column.col-mr-auto = "#{@currency.rate}"
