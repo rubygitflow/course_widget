@@ -7,7 +7,7 @@ class CurrenciesController < ApplicationController
   private
 
   def load_currency
-    # достаём одну запись
+    # get one record
     @currency = Currency.find_by(currency_from: 'USD',
                                  currency_to: 'RUB')
     if @currency.present?

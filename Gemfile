@@ -25,7 +25,8 @@ gem 'cbr_rates', git: 'git@github.com:rubygitflow/cbr_rates.git', branch: 'maste
 gem 'money-rails'
 gem 'sidekiq'
 gem 'sinatra', require: false # to see sidekiq admin panel
-
+gem 'daemons'
+gem 'delayed_job_active_record'
 
 
 # Reduces boot times through caching; required in config/boot.rb
