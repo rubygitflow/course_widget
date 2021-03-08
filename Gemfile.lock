@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:rubygitflow/cbr_rates.git
+  revision: 03bb0013d6800124bed9150f5a4df7990fa9b0bd
+  branch: master
+  specs:
+    cbr_rates (0.1.0)
+      money (~> 6)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -73,6 +82,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     concurrent-ruby (1.1.8)
+    connection_pool (2.2.3)
     crass (1.0.6)
     diff-lcs (1.4.4)
     dotenv (2.7.6)
@@ -109,7 +119,18 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
+    monetize (1.9.4)
+      money (~> 6.12)
+    money (6.13.8)
+      i18n (>= 0.6.4, <= 2)
+    money-rails (1.14.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.9.0)
+      money (~> 6.13.2)
+      railties (>= 3.0)
     msgpack (1.4.2)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
     nio4r (2.5.5)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
@@ -120,6 +141,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-protection (2.1.0)
+      rack
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -158,6 +181,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.5)
     regexp_parser (2.1.1)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
@@ -176,6 +200,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
+    ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -192,6 +217,15 @@ GEM
       rubyzip (>= 1.2.2)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
+    sidekiq (6.1.3)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
+    sinatra (2.1.0)
+      mustermann (~> 1.0)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
+      tilt (~> 2.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -246,11 +280,13 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  cbr_rates!
   dotenv-rails
   factory_bot_rails
   jbuilder (~> 2.7)
   launchy
   listen (~> 3.2)
+  money-rails
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.5)
@@ -259,6 +295,8 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers (~> 4.0)
+  sidekiq
+  sinatra
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)

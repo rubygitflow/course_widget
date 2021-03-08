@@ -1,0 +1,13 @@
+div.container.col-4
+  = form_with model: @mock, class: "card-body" do |f|
+    .form-group
+      = f.label :rate, class: "form-label"
+      = f.number_field :rate, class: "form-input"
+    .form-group
+      = f.label :at_time , class: "form-label"
+      = f.datetime_field  :at_time, value: (Time.now.localtime + 60).strftime("%Y-%m-%dT%H:%M:%S"), class: "form-input"
+
+    .actions
+      = f.submit "Submit", class: "btn btn-block btn-primary mb-2"
+
+  p = link_to 'Main page', root_path

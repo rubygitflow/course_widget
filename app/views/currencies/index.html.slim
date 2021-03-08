@@ -5,3 +5,4 @@ div.container.col-4
     div.columns 
       span.column.label.col-mr-auto = "#{@currency.currency_from}/#{@currency.currency_to}"  
       span.column.col-mr-auto = "#{@currency.rate}"
+  p = link_to 'Admin page', admin_path

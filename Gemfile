@@ -21,6 +21,13 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 gem 'slim-rails'
 
+gem 'cbr_rates', git: 'git@github.com:rubygitflow/cbr_rates.git', branch: 'master'
+gem 'money-rails'
+gem 'sidekiq'
+gem 'sinatra', require: false # to see sidekiq admin panel
+
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
